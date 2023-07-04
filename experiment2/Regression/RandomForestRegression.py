@@ -8,7 +8,7 @@ import pandas as pd
 
 # Load the dataset
 #dataset = pd.read_csv(r'../wiut.csv')
-dataset = pd.read_csv(r'../westminster.csv')
+dataset = pd.read_csv(r'../../Data/westminster.csv')
 
 #X = dataset.drop(['Week', 'Reg',], axis=1)  #
 
@@ -33,7 +33,7 @@ y_pred = regr.predict(X_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Random Forest Regression: 3 features')
+plt.title('Random Forest MLR: 3 features')
 plt.show()
 #
 # # Compute the evaluation metrics

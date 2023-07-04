@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dataset = pd.read_csv(r'../westminster.csv')
+dataset = pd.read_csv(r'../../Data/westminster.csv')
 '''
 feature_cols = ['Module_X_Lecture_attendance', 'Module_A', 'Module_B', 'Module_C','L_timeslot 9-11', 'L_timeslot 11-13','L_timeslot 14-16',
                 'S_timeslot 9-11', 'S_timeslot 11-13', 'S_timeslot 14-16']

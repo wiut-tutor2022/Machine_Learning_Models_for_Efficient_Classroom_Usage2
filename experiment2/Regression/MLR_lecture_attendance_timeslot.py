@@ -1,5 +1,5 @@
 '''
-Multiple Linear Regression
+Multiple Linear MLR
 - is there way to graphically represent other dependent attributes as well, like:
 week, day, time_of_day, class_type, school, joint, degree, class_duration, enrollment, status?
 - at the moment showing only 'faculty' VS (predicting) 'normalized attendance' on plot
@@ -29,7 +29,7 @@ y = dataset['Module_X_Lecture_attendance']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=None)
 
-mlr = LinearRegression()  # #Fitting the Multiple Linear Regression model
+mlr = LinearRegression()  # #Fitting the Multiple Linear MLR model
 mlr.fit(X_train, y_train)
 
 # #Prediction of test set
@@ -64,6 +64,6 @@ plt.scatter(dataset['Week'], dataset['Campus_L_attendance'], color='blue')
 plt.title('Week VS (predicting) Module_X_Lecture_attendance', fontsize=14)
 plt.xlabel('Week', fontsize=14)
 plt.ylabel('Module_X_Lecture_attendance', fontsize=14)
-plt.title('Multiple Linear Regression: On Campus Attendance vs Actual attendance')
+plt.title('Multiple Linear MLR: On Campus Attendance vs Actual attendance')
 plt.grid(True)
 plt.show()

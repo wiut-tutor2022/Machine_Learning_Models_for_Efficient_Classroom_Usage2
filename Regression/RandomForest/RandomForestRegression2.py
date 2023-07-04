@@ -29,7 +29,7 @@ y_pred = regr.predict(X_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Random Forest Regression: 5 features')
+plt.title('Random Forest MLR: 5 features')
 
 plt.show()
 

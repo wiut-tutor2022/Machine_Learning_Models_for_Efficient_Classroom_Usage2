@@ -37,7 +37,7 @@ importances = regr.feature_importances_
 indices = np.argsort(importances)[::-1]
 plt.bar(range(X.shape[1]), importances[indices])
 plt.xticks(range(X.shape[1]), X.columns[indices], rotation=25)
-plt.title('Feature importance for Decision Tree Regression')
+plt.title('Feature importance for Decision Tree MLR')
 plt.show()
 
 meanAbErr = metrics.mean_absolute_error(y_test, y_pred)

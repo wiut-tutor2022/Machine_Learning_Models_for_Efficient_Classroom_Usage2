@@ -8,7 +8,7 @@ import numpy as np
 from sklearn import metrics
 
 # Load the dataset from a CSV file#
-dataset = pd.read_csv('westminster.csv')
+dataset = pd.read_csv('../../Data/westminster.csv')
 
 # Select the relevant features
 feature_cols = ['Week', 'Campus_L_attendance', 'Module_A_deadlines', 'Module_B_deadlines', 'Module_C_deadlines',]
@@ -20,7 +20,7 @@ y = dataset['Module_X_Lecture_attendance']
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Fit the Multiple Linear Regression model
+# Fit the Multiple Linear MLR model
 mlr = LinearRegression()
 mlr.fit(X_train, y_train)
 

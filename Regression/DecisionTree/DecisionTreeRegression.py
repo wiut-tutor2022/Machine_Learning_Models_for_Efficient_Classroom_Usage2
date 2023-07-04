@@ -32,7 +32,7 @@ y_pred = regr.predict(X_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Decision Tree Regression: 10 features')
+plt.title('Decision Tree MLR: 10 features')
 plt.show()
 
 meanAbErr = metrics.mean_absolute_error(y_test, y_pred)

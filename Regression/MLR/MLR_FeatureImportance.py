@@ -17,7 +17,7 @@ y = dataset['normalized_attendance']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = None)
 
-mlr = LinearRegression() # Fitting the Multiple Linear Regression model
+mlr = LinearRegression() # Fitting the Multiple Linear MLR model
 mlr.fit(X_train, y_train)
 
 y_pred_mlr= mlr.predict(X_test)
@@ -38,7 +38,7 @@ print('R squared: {:.2f}'.format(mlr.score(X,y)*100))
 print('Mean Square Error:', meanSqErr)
 
 plt.barh(coef_df['feature'], coef_df['coefficient'])
-plt.title('Feature Importance for Multiple Linear Regression', fontsize=14)
+plt.title('Feature Importance for Multiple Linear MLR', fontsize=14)
 plt.xlabel('Absolute Coefficient Value', fontsize=14)
 plt.ylabel('Feature', fontsize=14)
 plt.grid(True)

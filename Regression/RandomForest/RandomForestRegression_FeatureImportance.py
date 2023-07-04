@@ -28,7 +28,7 @@ y_pred = regr.predict(X_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Random Forest Regression: 10 features')
+plt.title('Random Forest MLR: 10 features')
 plt.show()
 
 # Compute the evaluation metrics
@@ -49,7 +49,7 @@ std = np.std([tree.feature_importances_ for tree in regr.estimators_], axis=0)
 indices = np.argsort(importances)[::-1]
 
 plt.figure()
-plt.title("Feature importance for Random Forest Regression")
+plt.title("Feature importance for Random Forest MLR")
 plt.bar(range(X.shape[1]), importances[indices], yerr=std[indices], align="center")
 plt.xticks(range(X.shape[1]), X.columns[indices], rotation=25)
 plt.xlim([-1, X.shape[1]])

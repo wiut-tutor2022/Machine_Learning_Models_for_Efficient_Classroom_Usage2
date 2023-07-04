@@ -6,12 +6,22 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dataset = pd.read_csv(r'../../Data/output_lecture_seminar_processed3.csv', parse_dates=['date'])
+dataset = pd.read_csv(r'../../Data/westminster.csv')
 
-feature_cols = ['week',  'school',  'enrollment','day', 'faculty']
+feature_cols = ['Week', 'Reg', 'Campus_Lecture_attendance', 'Module_X_Lecture_attendance', 'Module_A_deadlines', 'Campus_Lecture_attendance',
+                'Module_B_deadlines', 'Module_C_deadlines']
 
+# need to select only relevant labels
+# Select the relevant features
+
+# Extract the features and target variable
 X = dataset[feature_cols]
-y = dataset['normalized_attendance']
+print(X)
+y = dataset['Module_X_Lecture_attendance']
+
+train_data = pd.read_csv('../../Data/westminster.csv')
+test_data = pd.read_csv('../../Data/westminster3.csv')
+
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=None)
 
@@ -26,8 +36,7 @@ y_pred = poly_regr.predict(X_poly_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Polymomial MLR: 5 features')
-
+plt.title('Polynomial regression: 8 features')
 plt.show()
 
 meanAbErr = metrics.mean_absolute_error(y_test, y_pred)

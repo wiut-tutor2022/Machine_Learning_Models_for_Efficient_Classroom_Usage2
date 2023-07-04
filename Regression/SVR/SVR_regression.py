@@ -28,7 +28,7 @@ y_pred = svr.predict(X_test)
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual attendance')
 plt.ylabel('Predicted attendance')
-plt.title('Support Vector Regression: 10 features')
+plt.title('Support Vector MLR: 10 features')
 
 plt.show()
 

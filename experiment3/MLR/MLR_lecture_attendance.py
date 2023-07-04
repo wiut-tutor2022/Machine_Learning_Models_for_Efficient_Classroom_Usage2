@@ -1,5 +1,5 @@
 '''
-Multiple Linear Regression
+Multiple Linear MLR
 - is there way to graphically represent other dependent attributes as well, like:
 week, day, time_of_day, class_type, school, joint, degree, class_duration, enrollment, status?
 - at the moment showing only 'faculty' VS (predicting) 'normalized attendance' on plot
@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import metrics
 
-dataset = pd.read_csv(r'westminster.csv')
+dataset = pd.read_csv(r'../../Data/westminster.csv')
 feature_cols = ['Week', 'Reg', 'Campus_Lecture_attendance', 'Module_X_Lecture_attendance', 'Module_A_deadlines', 'Campus_Lecture_attendance',
                 'Module_B_deadlines', 'Module_C_deadlines']
 # need to select only relevant labels
@@ -28,8 +28,8 @@ print(X)
 y = dataset['Module_X_Lecture_attendance']
 
 
-train_data = pd.read_csv('westminster.csv')
-test_data = pd.read_csv('westminster2.csv')
+train_data = pd.read_csv('../../Data/westminster.csv')
+test_data = pd.read_csv('../../Data/westminster2.csv')
 
 
 X_train = train_data.drop('Module_X_Lecture_attendance', axis=1)
@@ -38,7 +38,7 @@ y_train = train_data['Module_X_Lecture_attendance']
 X_test = test_data.drop('Module_X_Lecture_attendance', axis=1)
 y_test = test_data['Module_X_Lecture_attendance']
 
-mlr = LinearRegression()  # #Fitting the Multiple Linear Regression model
+mlr = LinearRegression()  # #Fitting the Multiple Linear MLR model
 mlr.fit(X_train, y_train)
 
 # #Prediction of test set
@@ -74,6 +74,6 @@ plt.scatter(dataset['Week'], dataset['Campus_Lecture_attendance'], color='blue')
 plt.title('Week VS (predicting) Module_X_Lecture_attendance', fontsize=14)
 plt.xlabel('Week', fontsize=14)
 plt.ylabel('Module_X_Lecture_attendance', fontsize=14)
-plt.title('Multiple Linear Regression: On Campus Attendance vs Actual attendance')
+plt.title('Multiple Linear MLR: On Campus Attendance vs Actual attendance')
 plt.grid(True)
 plt.show()
